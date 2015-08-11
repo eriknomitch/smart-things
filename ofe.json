@@ -1,6 +1,7 @@
 {
   "default": {
-    "extensions": [".md"]
+    "extensions": [".md"],
+    "files": ["devicetypes/eriknomitch/**/**", "smartapps/eriknomitch/**/**"]
   },
   "docs": {
     "extensions": [".md"],
