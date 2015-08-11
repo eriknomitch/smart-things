@@ -15,7 +15,7 @@
  
  
 metadata {
-        definition (name: "Motion Map", author: "eriknomitch") {
+        definition (name: "Motion Map", namespace: "eriknomitch", author: "eriknomitch") {
                 capability "Switch"
                 command "hello"
                 command "goodbye"
