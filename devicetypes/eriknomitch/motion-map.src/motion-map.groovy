@@ -1,7 +1,7 @@
 /*
- *  On/Off Shield (example)
+ *  MotionMap
  *
- *  Author: urman
+ *  Author: eriknomitch
  *  Date: 2013-03-14
  *  Revision: 2014-07-10
  *  Capabilities:
@@ -15,7 +15,7 @@
  
  
 metadata {
-        definition (name: "On/Off Shield (example)", author: "urman") {
+        definition (name: "Motion Map", author: "eriknomitch") {
                 capability "Switch"
                 command "hello"
                 command "goodbye"
