@@ -18,8 +18,9 @@ definition(
     namespace: "eriknomitch",
     author: "Erik Nomitch",
     description: "Motion Map description...",
-    category: "My Apps")
-
+    category: "My Apps",
+    iconUrl: "http://cdn.device-icons.smartthings.com/Office/office5-icn.png",
+    iconX2Url: "http://cdn.device-icons.smartthings.com/Office/office5-icn@2x.png")
 
 preferences {
     section("Configure Motion Sensors") {
