@@ -22,6 +22,15 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+definition(
+    name: "Pushover Me When",
+    namespace: "eriknomitch",
+    author: "Erik Nomitch",
+    description: "Send a Pushover notification from SmartThings when a device event occurs.",
+    category: "My Apps",
+    iconUrl: "http://cdn.device-icons.smartthings.com/Office/office5-icn.png",
+    iconX2Url: "http://cdn.device-icons.smartthings.com/Office/office5-icn@2x.png")
+
 preferences
 {
     section("Devices...") {
