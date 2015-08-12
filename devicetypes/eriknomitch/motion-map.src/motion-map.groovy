@@ -7,7 +7,7 @@
  *  Capabilities:
  *   Switch
  *  Custom Attributes:
- *   greeting
+ *   led
  *  Custom Commands
  *   hello
  *   goodbye
@@ -15,11 +15,11 @@
  
  
 metadata {
-        definition (name: "Motion Map", namespace: "eriknomitch", author: "eriknomitch") {
+        definition (name: "MotionMap", namespace: "eriknomitch", author: "eriknomitch") {
                 capability "Switch"
                 command "hello"
                 command "goodbye"
-                attribute "greeting","string"
+                attribute "led","string"
         }
 
         tiles {
@@ -27,15 +27,15 @@ metadata {
                         state "on", label: '${name}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#79b821"
                         state "off", label: '${name}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
                 }
-                standardTile("greeting", "device.greeting", width: 1, height: 1, canChangeIcon: true, canChangeBackground: true) {
+                standardTile("led", "device.led", width: 1, height: 1, canChangeIcon: true, canChangeBackground: true) {
                         state "default", label: 'hello', action: "hello", icon: "st.switches.switch.off", backgroundColor: "#ccccff"
                 }     
-                valueTile("message", "device.greeting", inactiveLabel: false) {
-                        state "greeting", label:'${currentValue}', unit:""
+                valueTile("message", "device.led", inactiveLabel: false) {
+                        state "led", label:'${currentValue}', unit:""
                 }
         
                 main "switch"
-                details(["switch","greeting","message"])
+                details(["switch","led","message"])
         }
     simulator {
         status "on":  "catchall: 0104 0000 01 01 0040 00 0A21 00 00 0000 0A 00 0A6F6E"
@@ -58,7 +58,7 @@ Map parse(String description) {
 
         def result = [
                 value: value,
-                name: value in ["on","off"] ? "switch" : (value && value != "ping" ? "greeting" : null),
+                name: value in ["on","off"] ? "switch" : (value && value != "ping" ? "led" : null),
                 handlerName: handlerName,
                 linkText: linkText,
                 descriptionText: descriptionText,
@@ -91,6 +91,6 @@ def goodbye() {
 def parse(String description) {
         log.debug "Parsing '${description}'"
         // TODO: handle 'switch' attribute
-        // TODO: handle 'greeting' attribute
+        // TODO: handle 'led' attribute
 
 }

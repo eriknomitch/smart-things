@@ -24,7 +24,7 @@ definition(
 
 preferences {
     section("Configure Motion Sensors") {
-        // FIX: Add Arduino
+        input "arduino", "capability.switch"
         input "motion", "capability.motionSensor", title: "Motion Here", required: false, multiple: true
         input(name: "led", type: "enum", title: "Light LED", options: ["White", "Green", "Blue"])
      }
