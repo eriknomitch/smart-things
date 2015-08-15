@@ -22,7 +22,7 @@
 import groovy.json.JsonSlurper
 
 preferences {
-        input("ip", "string", title:"IP Address", description: "192.168.1.150", required: true, displayDuringSetup: true)
+        input("ip", "string", title:"IP Address", description: "10.0.0.135", required: true, displayDuringSetup: true)
         input("port", "string", title:"Port", description: "8000", defaultValue: 8000 , required: true, displayDuringSetup: true)
         input("username", "string", title:"Username", description: "webiopi", required: true, displayDuringSetup: true)
         input("password", "password", title:"Password", description: "Password", required: true, displayDuringSetup: true)
