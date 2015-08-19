@@ -117,7 +117,7 @@ def handler(evt) {
 
     // Prepare the package to be sent
     def params = [
-        uri: "http://10.0.0.135:4567/blink1",
+        uri: "http://home.nomitch.com:4567/blink1",
         body: postBody
     ]
 
