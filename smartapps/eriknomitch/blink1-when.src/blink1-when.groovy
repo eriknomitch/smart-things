@@ -132,7 +132,7 @@ def handler(evt) {
             }
             else
             {
-                log.debug "HTTP response received [$response.status]"
+                log.debug "HTTP response received [${response.status}]"
             }
     }
 }
