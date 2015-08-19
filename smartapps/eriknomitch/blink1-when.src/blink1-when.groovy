@@ -50,7 +50,7 @@ preferences
     section("Blink(1)...") {
         input "color", "enum", title: "Color", required: true,
         metadata :[
-           values: [ 'Reg', 'Green', 'Blue' ]
+           values: [ 'Red', 'Green', 'Blue' ]
         ]
     }
 }
@@ -103,12 +103,12 @@ def initialize()
 }
 
 def handler(evt) {
-    log.debug "$evt.displayName is $evt.value"
+    #log.debug "$evt.displayName is $evt.value"
 
-    if (push == "Yes")
-    {
-        sendPush("${evt.displayName} is ${evt.value} [Sent from 'Blink(1) When']");
-    }
+    //if (push == "Yes")
+    //{
+        //sendPush("${evt.displayName} is ${evt.value} [Sent from 'Blink(1) When']");
+    //}
 
     // Define the initial postBody keys and values for all messages
     def postBody = [
