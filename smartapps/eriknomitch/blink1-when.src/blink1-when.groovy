@@ -111,9 +111,9 @@ def handler(evt) {
     //}
 
     // Define the initial postBody keys and values for all messages
-    def postBody = [
-        color: "${evt.color}"
-    ]
+    def postBody = []
+        //color: "${evt.color}"
+    //]
 
     // Prepare the package to be sent
     def params = [
