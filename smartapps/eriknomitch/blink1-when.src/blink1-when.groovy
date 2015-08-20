@@ -41,18 +41,6 @@ preferences
         input "accelerationSensors", "capability.accelerationSensor", title: "Which Acceleration Sensors?", multiple: true, required: false
         input "locks", "capability.lock", title: "Which Locks?", multiple: true, required: false
     }
-    section("Application...") {
-        input "push", "enum", title: "SmartThings App Notification?", required: true, multiple: false,
-        metadata :[
-           values: [ 'No', 'Yes' ]
-        ]
-     }
-    //section("Blink(1)...") {
-    //    input "color", "enum", title: "Color", required: true,
-    //    metadata :[
-    //       values: [ 'Red', 'Green', 'Blue' ]
-    //    ]
-    //}
 }
 
 def installed()
@@ -105,11 +93,6 @@ def initialize()
 def handler(evt) {
     log.debug "$evt.displayName is $evt.value"
 
-    //if (push == "Yes")
-    //{
-        //sendPush("${evt.displayName} is ${evt.value} [Sent from 'Blink(1) When']");
-    //}
-
     // Define the initial postBody keys and values for all messages
     def postBody = [
         value: "${evt.value}",
@@ -118,7 +101,7 @@ def handler(evt) {
 
     // Prepare the package to be sent
     def params = [
-        uri: "http://nomitch.asuscomm.com:4567/blink1",
+        uri: "http://nomitch.asuscomm.com:4567/event",
         body: postBody
     ]
 
