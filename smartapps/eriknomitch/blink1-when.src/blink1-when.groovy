@@ -47,12 +47,12 @@ preferences
            values: [ 'No', 'Yes' ]
         ]
      }
-    section("Blink(1)...") {
-        input "color", "enum", title: "Color", required: true,
-        metadata :[
-           values: [ 'Red', 'Green', 'Blue' ]
-        ]
-    }
+    //section("Blink(1)...") {
+    //    input "color", "enum", title: "Color", required: true,
+    //    metadata :[
+    //       values: [ 'Red', 'Green', 'Blue' ]
+    //    ]
+    //}
 }
 
 def installed()
@@ -103,7 +103,7 @@ def initialize()
 }
 
 def handler(evt) {
-    //log.debug "$evt.displayName is $evt.value"
+    log.debug "$evt.displayName is $evt.value"
 
     //if (push == "Yes")
     //{
@@ -111,9 +111,10 @@ def handler(evt) {
     //}
 
     // Define the initial postBody keys and values for all messages
-    def postBody = []
-        //color: "${evt.color}"
-    //]
+    def postBody = [
+        value: "${evt.value}",
+        displayName: "${evt.displayName}"
+    ]
 
     // Prepare the package to be sent
     def params = [
@@ -127,8 +128,8 @@ def handler(evt) {
         response ->
             if(response.status != 200)
             {
-                sendPush("ERROR: 'Blink(1) When' received HTTP error ${response.status}. Check your keys!")
-                log.error "Received HTTP error ${response.status}. Check your keys!"
+                sendPush("ERROR: 'Blink(1) When' received HTTP error ${response.status}.")
+                log.error "Received HTTP error ${response.status}."
             }
             else
             {
