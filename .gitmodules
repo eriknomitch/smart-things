@@ -1,0 +1,3 @@
+[submodule "contrib/device-type.myecobee"]
+	path = contrib/device-type.myecobee
+	url = https://github.com/yracine/device-type.myecobee.git
