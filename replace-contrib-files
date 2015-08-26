@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+mkdir -p devicetypes/yracine/ecobee.src
+
+cp contrib/device-type.myecobee/ecobee.devicetype.groovy devicetypes/yracine/ecobee.src/
