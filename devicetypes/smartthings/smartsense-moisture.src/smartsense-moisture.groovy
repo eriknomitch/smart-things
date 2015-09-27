@@ -47,6 +47,7 @@ metadata {
 		valueTile("battery", "device.battery", decoration: "flat", inactiveLabel: false, width: 2, height: 2) {
 			state "battery", label:'${currentValue}% battery', unit:""
 		}
+
 		main (["water", "temperature"])
 		details(["water", "temperature", "battery"])
 	}
@@ -125,6 +126,15 @@ def zwaveEvent(physicalgraph.zwave.commands.alarmv2.AlarmReport cmd)
 		map.descriptionText = "${device.displayName} is ${map.value}"
 	}
 
+	map
+}
+
+def zwaveEvent(physicalgraph.zwave.commands.basicv1.BasicSet cmd)
+{
+	def map = [:]
+	map.name = "water"
+	map.value = cmd.value ? "wet" : "dry"
+	map.descriptionText = "${device.displayName} is ${map.value}"
 	map
 }
 
