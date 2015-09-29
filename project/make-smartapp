@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+if ( mkdir ./smartapps/eriknomitch/$1.src && touch ./smartapps/eriknomitch/$1.src/$1.groovy ) ; then
+  echo "Created ./smartapps/eriknomitch/$1.src[/$1.groovy]"
+  exit 0
+fi
+
+echo "fatal: Error."
+exit 1
+
