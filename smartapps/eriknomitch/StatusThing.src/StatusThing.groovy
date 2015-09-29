@@ -10,7 +10,7 @@
 
 definition(
     name: "StatusThing",
-    namespace: "",
+    namespace: "eriknomitch",
     author: "alexking@me.com",
     description: "Mac app for controlling your SmartThings from your status bar. See the temperature at a glance, it F° or C°.",
     category: "Convenience",
