@@ -83,6 +83,23 @@ private send(msg) {
     sendSms(phone, msg)
   }
 
+  def params = [
+      uri: "http://home.nomitch.com",
+      path: "/test"
+  ]
+
+  try {
+      httpGet(params) { resp ->
+          resp.headers.each {
+             log.debug "${it.name} : ${it.value}"
+          }
+          log.debug "response contentType: ${resp.contentType}"
+          log.debug "response data: ${resp.data}"
+      }
+  } catch (e) {
+      log.error "something went wrong: $e"
+  }
+
   log.debug(msg)
 }
 
