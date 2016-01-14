@@ -1,5 +1,5 @@
 /**
- *  Action on Knock
+ *  Send to Controller When
  *
  *  Author: erik@nomitch.com
  *  Date: 11/07/15
@@ -8,7 +8,7 @@
  */
 
 definition(
-    name: "Action on Knock",
+    name: "Send to Controller When",
     namespace: "eriknomitch",
     author: "erik@nomitch.com",
     description: "Take an Action when someone knocks on a door.",

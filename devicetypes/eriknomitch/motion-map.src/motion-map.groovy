@@ -6,7 +6,7 @@
  *  Revision: 2014-07-10
  *  Capabilities:
  *   Switch
- *  Custom Attributes:
+ -*  Custom Attributes:
  *   led
  *  Custom Commands
  *   hello
